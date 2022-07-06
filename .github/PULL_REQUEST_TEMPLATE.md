@@ -14,3 +14,60 @@ Describe what you accomplished in this pull request (for example, what happens b
 ## Test Plan
 
 Test Plan: **Add your test plan here**
+
+ const response = await fetch(`http://text-processing.com/api/sentiment/`, {
+    method: "POST",
+    body: `text=${text}`,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
+  const json = await response.json();
+  return json.label === "pos";
+}
+
+   var summaries []CategorySummary
+    rows, err := db.Query("SELECT category, COUNT(category), AVG(value) FROM tasks GROUP BY category")
+    if err != nil {
+        return nil, err
+    }
+    defer rows.Close()
+    for rows.Next() {
+        var summary CategorySummary
+        err := rows.Scan(&summary.Title, &summary.Tasks, &summary.AvgValue)
+        if err != nil {
+            return nil, err
+        }
+        summaries = append(summaries, summary)
+    }
+    return summaries, nil
+}
+
+ expenses = []
+    for line in expenses_string.splitlines():
+        if line.startswith("#"):
+            continue
+        date, value, currency = line.split(" ")
+        expenses.append((datetime.datetime.strptime(date, "%Y-%m-%d"),
+                        float(value),
+                        currency))
+    return expenses
+
+ def change
+    create_table :shipping_addresses do |t|
+      t.string :name
+      t.string :address
+      t.string :city
+      t.string :zip
+      t.string :state
+      t.string :phone
+      t.string :email
+      t.references :shipping_method, index: true, foreign_key: true
+      t.references :customer, index: true, foreign_key: true
+      t.timestamps null: false
+    end
+  end
+end
+
+
+
